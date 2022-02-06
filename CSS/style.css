@@ -1,0 +1,85 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+button
+{
+    /*Position*/
+    position: relative;
+    margin: auto;
+    top: 200px;
+    /*Display*/
+    display: block;
+    /*Size*/
+    width: 200px;
+    height: 80px;
+    /*Decoration*/
+    background-color: mediumseagreen;
+    color: white;
+    border: none;
+    outline: none;
+    /*Font & Text*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+
+button::before 
+{
+   /*Content*/
+    content: "";
+    /*Position*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /*Display*/
+    display: block;
+    /*Size*/
+    width: 200px;
+    height: 80px;
+    /*Decoration*/
+    background: linear-gradient(to bottom right, dodgerblue 50%, transparent 50%);
+    opacity: 0;
+    /*Transform*/
+    transform: translate(-60px,-60px);
+    /*Transition*/
+    transition: transform .3s ease-out;
+}
+
+
+button::after
+{
+    /*Content*/
+     content: "";
+     /*Position*/
+     position: absolute;
+     top: 0;
+     left: 0;
+     /*Display*/
+     display: block;
+     /*Size*/
+     width: 200px;
+     height: 80px;
+     /*Decoration*/
+     background: linear-gradient(to top left, hsl(240,50%,60%) 50%, transparent 50%);
+     opacity: 0;
+     /*Transform*/
+     transform: translate(60px,60px);
+     /*Transition*/
+     transition: transform .3s ease-out;
+}
+
+button:hover::before
+{
+     transform: translate(0);
+     opacity: 0.5;
+}
+
+button:hover::after
+{
+     opacity: 0.5;
+     transform: translate(0);
+}
